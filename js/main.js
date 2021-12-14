@@ -1,7 +1,7 @@
 'use strict'
 
 const button = document.querySelector ('.js_button');
-const selectInput = document.querySelector ('.js_inputSelected');
+const inputSelect  = document.querySelector ('.js_select_form');
 const resultText = document.querySelector ('.js_result');
 
 console.log();
@@ -14,36 +14,31 @@ function getRandomNumber (max){
 function computerPlayer (){
     const randomNumber = getRandomNumber (10);
     let computerGame = '';
-    console.log('El número aleatorio es el ' + randomNumber);
+   
+
     if(randomNumber < 3){
         computerGame = 'Piedra';
-        console.log('El movimiento del PC es piedra');
+        
+
     }else if (randomNumber >= 6){
         computerGame = 'Papel'
-        console.log('El movimiento del PC es papel');
+        
     } else {
         computerGame = 'Tijera'
-        console.log('El movimiento del PC es tijera');
     }
+    console.log('El número aleatorio es el ' + randomNumber);
+    console.log(`El ordenador ha sacado: ${computerGame}`);
     return computerGame;
 }
- 
-function userPlayer (){
-    const userSelection = selectInput.value; 
-    let userGame = '';
+    computerPlayer ();
 
-    if (userSelection === 'piedra'){
-        userGame = 'Piedra';
-        (console.log('La jugada del usuario es piedra'))
-    } else if(userSelection === 'papel'){
-        userGame = 'Papel';
-        (console.log('La jugada del usuario es papel'))
-    } else {
-        userGame = 'Tijera';
-        (console.log('La jugada del usuario es tijera'))
-    }
-    return userGame;
-}
+function userPlayer () {
+    const userSelection = inputSelect.value;
+    console.log(`La usuaria ha seleccionado ${userSelection}`);
+    return userSelection;
+  }
+    userPlayer();
+
 
 function game () {
     const computerResult = computerPlayer;
