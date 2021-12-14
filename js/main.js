@@ -30,19 +30,20 @@ function computerPlayer (){
     console.log(`El ordenador ha sacado: ${computerGame}`);
     return computerGame;
 }
-    computerPlayer ();
+ 
 
 function userPlayer () {
     const userSelection = inputSelect.value;
     console.log(`La usuaria ha seleccionado ${userSelection}`);
     return userSelection;
   }
-    userPlayer();
+  
 
 
 function game () {
-    const computerResult = computerPlayer;
-    const playerResult = userPlayer;
+   
+    const computerResult = computerPlayer();
+    const playerResult = userPlayer();
 
     if (computerResult === playerResult) {
         resultText.innerHTML = 'Empate';
@@ -64,7 +65,8 @@ function game () {
 
 function handleClickButton (event) {
     event.preventDefault();
-    game ();
+       computerPlayer ();
+        game ();
     
 }
 
