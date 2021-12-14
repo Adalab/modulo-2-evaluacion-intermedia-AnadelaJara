@@ -3,10 +3,9 @@
 const button = document.querySelector ('.js_button');
 const inputSelect  = document.querySelector ('.js_select');
 const resultText = document.querySelector ('.js_result');
-const userTries = document.querySelector ('.js_player');
-const computerTries = document.querySelector ('.js_computer');
-let attempsUser = 0;
-let attempsComputer = 0;
+const userWin = document.querySelector ('.js_player');
+const computerWin = document.querySelector ('.js_computer');
+
 
 
 
@@ -63,31 +62,26 @@ function game () {
     }
 }
 
+//No funciona la función
+/*function score  () {
+    let win = 0;
+    
+    if (resultText.innerHTML === "¡Has ganado!") {
+        win += 1;
+        userWin.innerHTML += win;
+
+    } else if (resultText.innerHTML === "¡Has perdido!") {
+        win += 1;
+        computerWin.innerHTML += win;
+    }
+  }*/
+
+
 function handleClickButton (event) {
     event.preventDefault();
     game ();
-    countingAttemps (); 
+    //score ()
 }
 
 button.addEventListener ('click', handleClickButton);
 
-function score () {
-    let acc = 0;
-    if (msgResult.innerHTML === "¡Has ganado!") {
-      acc += 1;
-      playerCounterSpan.innerHTML = acc;
-    } else if (msgResult.innerHTML === "¡Has perdido!") {
-      acc += 1;
-      pcCounterSpan.innerHTML = acc;
-    }
-  }
-
-
-/*function countingUserAttemps () {
-    attempsUser += 1;
-    userTries.innerHTML = attempsUser;
-}
-
-function countingUserAttemps () {
-    attempsComputer += 1;
-    userComputer.innerHTML = attempsComputer;}*/
