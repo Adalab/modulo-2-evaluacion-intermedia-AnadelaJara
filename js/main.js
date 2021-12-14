@@ -1,10 +1,13 @@
 'use strict'
 
 const button = document.querySelector ('.js_button');
-const inputSelect  = document.querySelector ('.js_select_form');
+const inputSelect  = document.querySelector ('.js_select');
 const resultText = document.querySelector ('.js_result');
+const userTries = document.querySelector ('.js_player');
+const computerTries = document.querySelector ('.js_computer');
+let attempsUser = 0;
+let attempsComputer = 0;
 
-console.log();
 
 
 function getRandomNumber (max){
@@ -38,8 +41,6 @@ function userPlayer () {
     return userSelection;
   }
   
-
-
 function game () {
    
     const computerResult = computerPlayer();
@@ -62,14 +63,31 @@ function game () {
     }
 }
 
-
 function handleClickButton (event) {
     event.preventDefault();
-       computerPlayer ();
-        game ();
-    
+    game ();
+    countingAttemps (); 
 }
 
-
-
 button.addEventListener ('click', handleClickButton);
+
+function score () {
+    let acc = 0;
+    if (msgResult.innerHTML === "¡Has ganado!") {
+      acc += 1;
+      playerCounterSpan.innerHTML = acc;
+    } else if (msgResult.innerHTML === "¡Has perdido!") {
+      acc += 1;
+      pcCounterSpan.innerHTML = acc;
+    }
+  }
+
+
+/*function countingUserAttemps () {
+    attempsUser += 1;
+    userTries.innerHTML = attempsUser;
+}
+
+function countingUserAttemps () {
+    attempsComputer += 1;
+    userComputer.innerHTML = attempsComputer;}*/
