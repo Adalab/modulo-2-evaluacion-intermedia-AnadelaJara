@@ -24,8 +24,16 @@
 .button {
   background-color: green;
   color: #fff;
-  width: 15%;
+  width: 100px;
   padding: 3px;
+}
+
+.reload {
+  background-color: green;
+  color: #fff;
+  width: 150px;
+  padding: 3px;
+  margin-top: 10px;
 }
 
 .form {
@@ -44,4 +52,8 @@
 
 .accountText {
   margin: 30px;
+}
+
+.hidden {
+  display: none;
 }
